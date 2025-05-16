@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How GradeCalculator.college Works</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f9f9f9; color: #333; }
+    pre { background: #eee; padding: 1rem; overflow-x: auto; border-radius: 5px; }
+    a { color: #0077cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>How GradeCalculator.college Works</h1>
+  <p>This site helps students calculate their final grades based on scores and weights.</p>
+  <h2>Simple Grade Calculator Demo</h2>
+  <pre>
+&lt;input id="score" type="number" placeholder="Score" /&gt;
+&lt;input id="weight" type="number" placeholder="Weight (%)" /&gt;
+&lt;button onclick="calculateGrade()"&gt;Calculate&lt;/button&gt;
+&lt;div id="result"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+function calculateGrade() {
+  const score = parseFloat(document.getElementById('score').value);
+  const weight = parseFloat(document.getElementById('weight').value);
+  if(isNaN(score) || isNaN(weight)) {
+    alert('Please enter valid numbers');
+    return;
+  }
+  const weighted = (score * weight) / 100;
+  document.getElementById('result').textContent = 'Weighted Score: ' + weighted.toFixed(2);
+}
+&lt;/script&gt;
+  </pre>
+  <p>Try the full calculator at <a href="https://gradecalculator.college" target="_blank" rel="noopener noreferrer">gradecalculator.college</a></p>
+</body>
+</html>
